@@ -21,6 +21,7 @@ function doSomethingAndShowDialog(event) {
             clickEvent = event;
             //writeToDoc("Ribbon button clicked.");
             openDialogAsIframe();
+            event.completed();
         }
 
 function addTextToBody(text, icon, event) {
@@ -92,6 +93,8 @@ function PostDataToAPI(event)
             writemessage("errrpr");
         }
     });
+
+    event.completed();
 }
 
 function writemessage(messages)
