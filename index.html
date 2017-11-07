@@ -1,131 +1,270 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title></title>
-    <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <title>Shyam Sunar Sah</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Profile">
+    <meta name="author" content="Shyams">  
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">  
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
 
-    <!-- For the JavaScript APIs for Office, go to https://aka.ms/officejs-overview to learn more. -->
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
-    <!-- To enable offline debugging using a local reference to Office.js, use: -->
-    <!-- <script src="Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
-    <!-- <script src="Scripts/Office/1/office.js" type="text/javascript"></script>  -->
-
-    <script src="MessageRead.js" type="text/javascript"></script>
-    <script src="Scripts/FabricUI/MessageBanner.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
-
-    <!-- For the Office UI Fabric, go to https://aka.ms/office-ui-fabric to learn more. -->
-    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.min.css" />
-    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css" />
-
-    <!-- To enable the offline use of Office UI Fabric, use: -->
-    <!-- link rel="stylesheet" href="Content/fabric.min.css" -->
-    <!-- link rel="stylesheet" href="Content/fabric.components.min.css" -->
-</head>
 <body>
-    <div id="content-header">
-        <div class="padding">
-            <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight">All properties</p>
-        </div>
-    </div>
-    <div id="content-main" class="ms-Grid">
-        <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context.mailbox.Item properties</h2>
-                <div class="ms-Table">
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell">Property</span>
-                        <span class="ms-Table-cell">Value</span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">dateTimeCreated</span>
-                        <span id="dateTimeCreated" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">dateTimeModified</span>
-                        <span id="dateTimeModified" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">itemClass</span>
-                        <span id="itemClass" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">itemId</span>
-                        <span id="itemId" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">itemType</span>
-                        <span id="itemType" class="ms-Table-cell"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="message-props" class="ms-Grid-row hidden">
-            <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context.mailbox.Message properties</h2>
-                <div class="ms-Table">
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell">Property</span>
-                        <span class="ms-Table-cell">Value</span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">attachments</span>
-                        <span id="attachments" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">cc</span>
-                        <span id="cc" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">conversationId</span>
-                        <span id="conversationId" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">from</span>
-                        <span id="from" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">internetMessageId</span>
-                        <span id="internetMessageId" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">normalizedSubject</span>
-                        <span id="normalizedSubject" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">sender</span>
-                        <span id="sender" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">subject</span>
-                        <span id="subject" class="ms-Table-cell"></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold">to</span>
-                        <span id="to" class="ms-Table-cell"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FabricUI component used for displaying notifications -->
-    <div class="ms-MessageBanner" style="position:absolute;bottom: 0;">
-        <div class="ms-MessageBanner-content">
-            <div class="ms-MessageBanner-text">
-                <div class="ms-MessageBanner-clipper">
-                    <div class="ms-font-m-plus ms-fontWeight-semibold" id="notificationHeader"></div>
-                    <div class="ms-font-m ms-fontWeight-semilight" id="notificationBody"></div>
-                </div>
-            </div>
-            <button class="ms-MessageBanner-expand" style="display:none"><i class="ms-Icon ms-Icon--chevronsDown"></i> </button>
-            <div class="ms-MessageBanner-action"></div>
-        </div>
-        <button class="ms-MessageBanner-close"> <i class="ms-Icon ms-Icon--x"></i> </button>
-    </div>
+    <!-- ******HEADER****** --> 
+    <header class="header">
+        <div class="container">                       
+            <img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="Shyam shah" />
+            <div class="profile-content pull-left">
+                <h1 class="name">Shyam Sundar Sah</h1>
+                <h2 class="desc">Office(Word,Excel,PowerPoint & Outlook) Add-in & Plugin developer</h2>   
+                <ul class="social list-inline">
+                    <li><a href="https://twitter.com/shyamshah" target="_blank"><i class="fa fa-twitter"></i></a></li>                   
+                    <li><a href="https://www.facebook.com/luckysiraha" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/shahshyam" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/shahshyam" target="_blank"><i class="fa fa-github-alt"></i></a></li>                  
+                                  
+                </ul> 
+            </div><!--//profile-->
+            <a class="btn btn-cta-primary pull-right" href="mailto:shyam.sundar525@gmail.com" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>              
+        </div><!--//container-->
+    </header><!--//header-->
+    
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+                <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">About Me</h2>
+                        <div class="content">
+                             <p align='justify'>I'm a freelance developer having more than 6 years of experience, based in Kathmandu, Nepal, specialising in building Word,Execel,PowerPoint and Outlook Add-In and Plugin using C# ,AddinExpress,Redemption and web based using javascript and node.js, consider myself full-stack developer for .Net Framework but I tend to work more on the back-end. I also enjoy making Office custmization in my spare time. I like new technology challenge and implementing it. I enjoy building stuff, investigating and learning new technologies.</p>   
+                         
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+    
+               <section class="latest section">
+                    <div class="section-inner">
+                        <h2 class="heading">Latest Projects</h2>
+                        <div class="content">    
+                                               
+                            <div class="item featured text-center">
+                                <h3 class="title"><a href="https://www.integro.com" target="_blank">Email Mail Manager</a></h3>
+                                <p class="summary">Value-based email governance: Keep what is important. Eliminate what is not. With Integro Email Manager.</p>
+                                <div class="featured-image">
+                                    <a href="https://www.integro.com/products/iem" target="_blank">
+                                    <img class="img-responsive project-image" src="https://www.integro.com/wp-content/uploads/2014/04/iemx_screenshot2-e1398793674401.png" alt="Mail Manager" />
+                                    </a>
+                                    <div class="ribbon">
+                                        <div class="text">New</div>
+                                        </div>
+                                    </div>
+                                    
+                                <div class="desc text-left">                                    
+                                    <p align='justify'>companies to take a proactive approach to email archiving &#45; one that&#39;s focused on the value of each email. IEM addresses the critical need in today &#39;s enterprises to keep the email that&#39;s important for business and legal obligations, and eliminate the costs and risk exposure associated with over retention of email.</p>
+                                    
+                                </div><!--//desc-->         
+                                             
+                            </div><!--//item-->
+                            
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+                
+                <section class="projects section">
+                    <div class="section-inner">
+                        <h2 class="heading">Other Project</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title"><a href="#">Fishbowl Inventory integration</a></h3>
+                                <p class="summary" align='justify'>The Magento module, located in the Integrations group, is an add-on module that can be installed from the Small.Plugin.png Plugin module. After installing the plugin, a new module is added that integrates with one or more Magento shopping carts. This plugin is specifically designed to integrate with Magento 2.1 or higher. For older versions of Magento, use the Small.Magento Cart.png Magento Cart module.</p>
+                                <p><a class="more-link" href="https://www.fishbowlinventory.com/wiki/Magento" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                            </div><!--//item-->
+                           
+                            
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+                
+                <section class="experience section">
+                    <div class="section-inner">
+                        <h2 class="heading">Work Experience</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title">.Net Fullstack developer & Office Add-in <span class="place"><a href="#">Upwork.inc</a></span> <span class="year">(2015 - Present)</span></h3>
+                                <p align='justify'>Completed more than 100 of outlook COM, VSTO plugins have feature Ribbon Customization (adding new control (Group, Button, Menu and Dropdown,Adding new tab), Side panel customization (Adding left, right , top and bottom panel) using AddinExpress and experience in third party integration using REST,SOAP and WEB API.</p>
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="title">Sr.Software Engineer - <span class="place"><a href="#">Asteroid Venture Pvt Ltd</a></span> <span class="year">(2013 - 2014)</span></h3>
+                                <p align='justify'>Tzunami Inc. is the pioneer and the global market leader in multi-platform SharePoint Migration. Asteroid Venture is Tzunami &#39;s core Research and Development Partner providing research, development, release, and support services for Tzunami &#39;s flagship enterprise migration product Deployer. With client base spanning multiple Fortune 500 companies and global multinationals as well as government institutions, Tzunami constantly pushes the boundaries of enterprise platforms and tools for efficiency, scalability and return of investment.</p>
+                            </div><!--//item-->
+                            
+                            <div class="item">
+                                <h3 class="title">Software Engineer - <span class="place"><a href="#">Asteroid Venture Pvt Ltd</a></span> <span class="year">(2011 - 2013)</span></h3>
+                                <p><ul><li>	Extract specific pattern of content from Electronic Content Management System using Regular Expression and present user friendly way.</li>
+<li>Worked in the automation of migration to SharePoint online and Office 365 by extensively customizing the Tzunami Deployer Rule Engine.</li>
+<li>	Technologies used: APIs for the major ECM systems (Documentum, Docushare, eRoom, Lotus Notes), Numerous design patterns, SharePoint, C#, ASP.NET, SQL Server etc.</li></ul>
+</p>
+                            </div><!--//item-->
+                            
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+               
+            </div><!--//primary-->
+            <div class="secondary col-md-4 col-sm-12 col-xs-12">
+                 <aside class="info aside section">
+                    <div class="section-inner">
+                        <h2 class="heading sr-only">Basic Information</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>Kathmandu, NP</li>
+                                <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#">shyams.shah@outlook.com</a></li>                                
+                            </ul>
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </aside><!--//aside-->
+                
+                <aside class="skills aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Skills</h2>
+                        <div class="content">
+                            <p class="intro">
+                               I have following skills</p>
+                            
+                            <div class="skillset">
+                               
+                                <div class="item">
+                                    <h3 class="level-title">C#<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Expert</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="96%">
+                                        </div>                                      
+                                    </div><!--//level-bar-->                                 
+                                </div><!--//item-->
+								<div class="item">
+                                    <h3 class="level-title">Office Addin &amp;Plugin<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Expert</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="96%">
+                                        </div>                                      
+                                    </div><!--//level-bar-->                                 
+                                </div><!--//item-->
+                                
+                                <div class="item">
+                                    <h3 class="level-title">Javascript &amp; jQuery<span class="level-label">Pro</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="80%">
+                                        </div>                                      
+                                    </div><!--//level-bar-->                                 
+                                </div><!--//item-->
+                                
+                                <div class="item">
+                                    <h3 class="level-title">HTML5, CSS3, SASS &amp; LESS<span class="level-label">Intermediate</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="70%">
+                                        </div>                                      
+                                    </div><!--//level-bar-->                                 
+                                </div><!--//item-->
+                                
+                                <div class="item">
+                                    <h3 class="level-title">ASP.NET &amp; MVC<span class="level-label">Pro</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="85%">
+                                        </div>                                      
+                                    </div><!--//level-bar-->                                 
+                                </div><!--//item-->
+                                
+                               
+                            </div>              
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </aside><!--//section-->
+                
+                <aside class="testimonials aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Testimonials</h2>
+                        <div class="content">
+                            <div class="item">
+                                <blockquote class="quote">                                  
+                                    <p><i class="fa fa-quote-left"></i>I had a great experience working with Shyams. He was professional and helpful in working with my requirements.</p>
+                                </blockquote>                
+                                <p class="source"><span class="name">John Valeu</span><br /><span class="title">NXS Security</span></p>                                                             
+                            </div><!--//item-->
+                            
+                            <p><a class="more-link" href="https://www.upwork.com/freelancers/~01b266b20bfa60411d"><i class="fa fa-external-link"></i> More on Upwork</a></p> 
+                            
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+                
+                <aside class="education aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Education</h2>
+                        <div class="content">                           
+                            <div class="item">
+                                <h3 class="title"><i class="fa fa-graduation-cap"></i>Bachelor in Computer Engineering</h3>
+                                <h4 class="university">Pulchowk Campus <span class="year">(2006-2010)</span></h4>
+                            </div><!--//item-->
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+                            
+                <aside class="languages aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Languages</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li class="item">
+                                    <span class="title"><strong>Nepali:</strong></span>
+                                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                </li><!--//item-->
+								<li class="item">
+                                    <span class="title"><strong>Maithali:</strong></span>
+                                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                </li><!--//item-->
+                                <li class="item">
+                                    <span class="title"><strong>English:</strong></span>
+                                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
+                                </li><!--//item-->
+                            </ul>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->             
+                
+            
+                    
+              
+            </div><!--//secondary-->    
+        </div><!--//row-->
+    </div><!--//masonry-->
+    
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container text-center">
+               
+    <!-- Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script> 
+   
+    <!-- custom js -->
+    <script type="text/javascript" src="assets/js/main.js"></script>            
 </body>
-</html>
+</html> 
+
